@@ -8,32 +8,49 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styel.css" />
     <title>Job Application Tracker</title>
   </head>
-  <body>
+  <body class="geist-font">
     <div class="main-container max-w-[1600px] m-auto bg-[#EEF4FF]">
-      <section class="dashboard">
-        <h1 class="text-[#323B49] text-[32px] font-bold">
+      <section
+        class="dashboard max-w-[1110px] m-auto pt-[60px] pb-[30px] border-b border-[#E6E7E9]"
+      >
+        <h1 class="text-[#002C5C] text-[32px] font-bold mb-5">
           Job Application Tracker
         </h1>
         <div>
-          <div class="dashboard-card-container">
-            <div class="dashboard-card">
-              <p>total</p>
-              <p>0</p>
+          <div class="dashboard-card-container flex gap-4 justify-between">
+            <div class="card card-border bg-base-100 w-96">
+              <div class="card-body">
+                <h2 class="card-title text-sm font-medium">Title</h2>
+                <p class="text-2xl text-[#002C5C] font-bold">0</p>
+              </div>
             </div>
-            <div class="dashboard-card">
-              <p>interview</p>
-              <p>0</p>
+            <div class="card card-border bg-base-100 w-96">
+              <div class="card-body">
+                <h2 class="card-title text-sm font-medium">Interview</h2>
+                <p class="text-2xl text-[#10B981] font-bold">0</p>
+              </div>
             </div>
-            <div class="dashboard-card">
-              <p>rejected</p>
-              <p>0</p>
+            <div class="card card-border bg-base-100 w-96">
+              <div class="card-body">
+                <h2 class="card-title text-sm font-medium">Rejected</h2>
+                <p class="text-2xl text-[#EF4444] font-bold">0</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
+      <hr class="max-w-[1110px] m-auto border-b border-[#E6E7E9]" />
     </div>
   </body>
 </html>

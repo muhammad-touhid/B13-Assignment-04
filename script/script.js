@@ -13,9 +13,12 @@ let rejectedFilterBtn = document.getElementById("rejectedFilterBtn");
 let mainContainer = document.querySelector("main");
 let allJobPost = document.getElementById("allJobPost");
 let filteredSection = document.getElementById("filteredSection");
+let allJob = allJobPost.children;
+let tabJobCount = document.getElementById("tab-job-count");
 
 function calculateCount() {
   allCardCount.innerText = allJobPost.children.length;
+  tabJobCount.innerText = allJobPost.children.length;
   interviewCount.innerText = interviewCards.length;
   rejectedCount.innerText = rejectedCards.length;
 }
@@ -36,13 +39,16 @@ function filter(id) {
   if (id == "interviewFilterBtn") {
     allJobPost.classList.add("hidden");
     filteredSection.classList.remove("hidden");
+    tabJobCount.innerText = interviewCards.length;
     renderInterviewCard();
   } else if (id == "allFilterBtn") {
     allJobPost.classList.remove("hidden");
     filteredSection.classList.add("hidden");
+    tabJobCount.innerText = allJobPost.children.length;
   } else if (id == "rejectedFilterBtn") {
     allJobPost.classList.add("hidden");
     filteredSection.classList.remove("hidden");
+    tabJobCount.innerText = rejectedCards.length;
     renderRejectedCard();
   }
 }
@@ -83,8 +89,6 @@ mainContainer.addEventListener("click", function (event) {
       renderRejectedCard();
     }
   } else if (event.target.classList.contains("rejectedBtn")) {
-    console.log(event.target.classList.contains("rejectedBtn"));
-
     let cardBody = event.target.parentNode.parentNode.parentNode;
     let jobTitle = cardBody.querySelector(".card-title").innerText;
     let jobPosition = cardBody.querySelector(".job-position").innerText;
@@ -119,6 +123,23 @@ mainContainer.addEventListener("click", function (event) {
     }
 
     calculateCount();
+  } else if (event.target.classList.contains("dlt-button")) {
+    let cardBody = event.target.parentNode.parentNode;
+    console.log(event.target.classList.contains("dlt-button"));
+
+    let jobTitle = cardBody.querySelector(".card-title").innerText;
+    cardBody.parentElement.remove();
+
+    interviewCards = interviewCards.filter((item) => item.jobTitle != jobTitle);
+    rejectedCards = rejectedCards.filter((item) => item.jobTitle != jobTitle);
+
+    calculateCount();
+
+    if (currentStatus == "interviewFilterBtn") {
+      renderInterviewCard();
+    } else if (currentStatus == "rejectedFilterBtn") {
+      renderRejectedCard();
+    }
   }
 });
 
@@ -137,7 +158,6 @@ function renderInterviewCard() {
         </div>
       </div>
     `;
-    return;
   }
 
   for (let interviewCard of interviewCards) {
@@ -162,8 +182,8 @@ function renderInterviewCard() {
                 <button class="interviewBtn btn btn-outline btn-success">Interview</button>
                 <button class="rejectedBtn btn btn-outline btn-error">Rejected</button>
               </div>
-              <div class="dlt-button text-[#64748B] absolute top-8 right-6">
-                <i class="fa-solid fa-trash-can"></i>
+              <div class="dlt-button text-[#64748B] absolute top-8 right-6 cursor-pointer">
+                <i class="fa-solid fa-trash-can dlt-button"></i>
               </div>
             </div>
             
@@ -188,7 +208,6 @@ function renderRejectedCard() {
         </div>
       </div>
     `;
-    return;
   }
 
   for (let rejectedCard of rejectedCards) {
@@ -213,8 +232,8 @@ function renderRejectedCard() {
                 <button class="interviewBtn btn btn-outline btn-success">Interview</button>
                 <button class="rejectedBtn btn btn-outline btn-error">Rejected</button>
               </div>
-              <div class="dlt-button text-[#64748B] absolute top-8 right-6">
-                <i class="fa-solid fa-trash-can"></i>
+              <div class="dlt-button text-[#64748B] absolute top-8 right-6 cursor-pointer">
+                <i class="fa-solid fa-trash-can dlt-button"></i>
               </div>
             </div>
     `;

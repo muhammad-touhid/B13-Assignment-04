@@ -13,7 +13,7 @@ let rejectedFilterBtn = document.getElementById("rejectedFilterBtn");
 let mainContainer = document.querySelector("main");
 let allJobPost = document.getElementById("allJobPost");
 let filteredSection = document.getElementById("filteredSection");
-let allJob = allJobPost.children;
+
 let tabJobCount = document.getElementById("tab-job-count");
 
 function calculateCount() {
@@ -135,6 +135,8 @@ mainContainer.addEventListener("click", function (event) {
 
     calculateCount();
 
+    renderAllJobPostEmpty();
+
     if (currentStatus == "interviewFilterBtn") {
       renderInterviewCard();
     } else if (currentStatus == "rejectedFilterBtn") {
@@ -239,5 +241,21 @@ function renderRejectedCard() {
     `;
 
     filteredSection.appendChild(div);
+  }
+}
+
+function renderAllJobPostEmpty() {
+  if (allJobPost.children.length === 0) {
+    allJobPost.innerHTML = `
+      <div class="card w-full bg-base-100 card-xs shadow-sm p-14">
+        <div class="card-body items-center text-center">
+          <img src="./assets/assignment_doc.png" class="w-16" />
+          <h2 class="card-title text-[#002C5C]">No jobs available</h2>
+          <p class="text-[#64748B]">
+            Check back soon for new job opportunities
+          </p>
+        </div>
+      </div>
+    `;
   }
 }

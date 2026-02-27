@@ -25,7 +25,7 @@ Event bubbling is a process in the DOM where an event starts from the innermost 
 ## Answer to question 4:
 Event delegation is a system where instead of attaching event listener to multiple child elements we attach a single event listener to their parent. The parent listens for events from the child using event bubbling.
 
-# It is useful for:
+### It is useful for:
 1. Fewer event listeners 
 2. Works for elements added later to the DOM
 3. Optimised and clean code

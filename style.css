@@ -1,0 +1,23 @@
+.geist-font {
+  font-family: "Geist", sans-serif;
+}
+
+.tabs .btn {
+  background-color: #fff;
+  color: #64748b;
+}
+
+.tabs .btn-info {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.status {
+  border: none;
+  text-transform: uppercase;
+}
+
+.interviewBtn,
+.rejectedBtn {
+  text-transform: uppercase;
+}

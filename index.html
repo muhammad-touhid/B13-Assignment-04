@@ -8,7 +8,6 @@
       rel="stylesheet"
       type="text/css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,11 +22,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./styel.css" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Job Application Tracker</title>
   </head>
   <body class="geist-font">
-    <div class="main-container max-w-[1600px] m-auto bg-[#EEF4FF] pb-16">
+    <div class="main-container max-w-[1600px] m-auto bg-[#EEF4FF] pb-16 px-3">
       <section
         class="dashboard max-w-[1110px] m-auto pt-[60px] pb-[30px] border-b border-[#E6E7E9]"
       >
@@ -41,7 +40,10 @@
                 <h2 class="card-title text-sm font-medium text-[#323B49]">
                   Total
                 </h2>
-                <p id="allCardCount" class="text-2xl text-[#002C5C] font-bold">
+                <p
+                  id="all-card-count"
+                  class="text-2xl text-[#002C5C] font-bold"
+                >
                   0
                 </p>
               </div>
@@ -52,7 +54,7 @@
                   Interview
                 </h2>
                 <p
-                  id="interviewCount"
+                  id="interview-count"
                   class="text-2xl text-[#10B981] font-bold"
                 >
                   0
@@ -64,7 +66,10 @@
                 <h2 class="card-title text-sm font-medium text-[#323B49]">
                   Rejected
                 </h2>
-                <p id="rejectedCount" class="text-2xl text-[#EF4444] font-bold">
+                <p
+                  id="rejected-count"
+                  class="text-2xl text-[#EF4444] font-bold"
+                >
                   0
                 </p>
               </div>
@@ -82,32 +87,32 @@
         </div>
         <div class="tabs flex gap-2 mb-5">
           <button
-            onclick="filter('allFilterBtn')"
-            id="allFilterBtn"
+            onclick="filter('all-filter-btn')"
+            id="all-filter-btn"
             class="btn btn-active btn-info px-10! text-xs"
           >
             All
           </button>
           <button
-            onclick="filter('interviewFilterBtn')"
-            id="interviewFilterBtn"
-            class="btn text-xs"
+            onclick="filter('interview-filter-btn')"
+            id="interview-filter-btn"
+            class="btn bg-base-100 text-xs"
           >
             Interview
           </button>
           <button
-            onclick="filter('rejectedFilterBtn')"
-            id="rejectedFilterBtn"
-            class="btn text-xs"
+            onclick="filter('rejected-filter-btn')"
+            id="rejected-filter-btn"
+            class="btn base-100 text-xs"
           >
             Rejected
           </button>
         </div>
         <section
-          id="filteredSection"
-          class="filter-cards max-w-[1110px] m-auto pt-[30px] hidden space-y-4"
+          id="filtered-section"
+          class="filter-cards max-w-[1110px] m-auto hidden space-y-4"
         ></section>
-        <section id="allJobPost" class="job-post space-y-4">
+        <section id="all-job-post" class="job-post space-y-4">
           <div class="card w-full bg-base-100 card-xs shadow-sm p-4 relative">
             <div class="card-body">
               <h2 class="card-title text-[#002C5C]">Mobile First Corp</h2>
@@ -116,7 +121,7 @@
                 Remote • Full-time • $130,000 - $175,000
               </p>
               <button
-                class="status btn btn-soft w-fit mt-2 text-[#002C5C] text-sm"
+                class="status btn btn-soft w-fit whitespace-nowrap mt-2 text-[#002C5C] text-sm"
               >
                 Not Applied
               </button>
@@ -125,10 +130,10 @@
                 Work on products used by millions of users worldwide.
               </p>
               <div class="flex gap-2 mt-2">
-                <button class="interviewBtn btn btn-outline btn-success">
+                <button class="interview-btn btn btn-outline btn-success">
                   Interview
                 </button>
-                <button class="rejectedBtn btn btn-outline btn-error">
+                <button class="rejected-btn btn btn-outline btn-error">
                   Rejected
                 </button>
               </div>
@@ -147,7 +152,7 @@
                 Los Angeles, CA • Part-time • $80,000 - $120,000
               </p>
               <button
-                class="status btn btn-soft w-fit mt-2 text-[#002C5C] text-sm"
+                class="status btn btn-soft w-fit whitespace-nowrap mt-2 text-[#002C5C] text-sm"
               >
                 Not Applied
               </button>
@@ -156,10 +161,10 @@
                 have portfolio and experience with modern web design trends.
               </p>
               <div class="flex gap-2 mt-2">
-                <button class="interviewBtn btn btn-outline btn-success">
+                <button class="interview-btn btn btn-outline btn-success">
                   Interview
                 </button>
-                <button class="rejectedBtn btn btn-outline btn-error">
+                <button class="rejected-btn btn btn-outline btn-error">
                   Rejected
                 </button>
               </div>
@@ -178,7 +183,7 @@
                 Boston, MA • Full-time • $125,000 - $165,000
               </p>
               <button
-                class="status btn btn-soft w-fit mt-2 text-[#002C5C] text-sm"
+                class="status btn btn-soft w-fit whitespace-nowrap mt-2 text-[#002C5C] text-sm"
               >
                 Not Applied
               </button>
@@ -187,10 +192,10 @@
                 skills: D3.js, React, and strong analytical thinking.
               </p>
               <div class="flex gap-2 mt-2">
-                <button class="interviewBtn btn btn-outline btn-success">
+                <button class="interview-btn btn btn-outline btn-success">
                   Interview
                 </button>
-                <button class="rejectedBtn btn btn-outline btn-error">
+                <button class="rejected-btn btn btn-outline btn-error">
                   Rejected
                 </button>
               </div>
@@ -207,7 +212,7 @@
                 Seattle, WA • Full-time • $140,000 - $190,000
               </p>
               <button
-                class="status btn btn-soft w-fit mt-2 text-[#002C5C] text-sm"
+                class="status btn btn-soft w-fit whitespace-nowrap mt-2 text-[#002C5C] text-sm"
               >
                 Not Applied
               </button>
@@ -216,10 +221,10 @@
                 AWS. Work with modern DevOps practices and cloud infrastructure.
               </p>
               <div class="flex gap-2 mt-2">
-                <button class="interviewBtn btn btn-outline btn-success">
+                <button class="interview-btn btn btn-outline btn-success">
                   Interview
                 </button>
-                <button class="rejectedBtn btn btn-outline btn-error">
+                <button class="rejected-btn btn btn-outline btn-error">
                   Rejected
                 </button>
               </div>
@@ -236,7 +241,7 @@
                 Austin, TX • Full-time • $110,000 - $150,000
               </p>
               <button
-                class="status btn btn-soft w-fit mt-2 text-[#002C5C] text-sm"
+                class="status btn btn-soft w-fit whitespace-nowrap mt-2 text-[#002C5C] text-sm"
               >
                 Not Applied
               </button>
@@ -246,10 +251,10 @@
                 expertise required.
               </p>
               <div class="flex gap-2 mt-2">
-                <button class="interviewBtn btn btn-outline btn-success">
+                <button class="interview-btn btn btn-outline btn-success">
                   Interview
                 </button>
-                <button class="rejectedBtn btn btn-outline btn-error">
+                <button class="rejected-btn btn btn-outline btn-error">
                   Rejected
                 </button>
               </div>
@@ -266,7 +271,7 @@
                 New York, NY • Full-time • $130,000 - $170,00
               </p>
               <button
-                class="status btn btn-soft w-fit mt-2 text-[#002C5C] text-sm"
+                class="status btn btn-soft w-fit whitespace-nowrap mt-2 text-[#002C5C] text-sm"
               >
                 Not Applied
               </button>
@@ -276,10 +281,10 @@
                 and professional development opportunities.
               </p>
               <div class="flex gap-2 mt-2">
-                <button class="interviewBtn btn btn-outline btn-success">
+                <button class="interview-btn btn btn-outline btn-success">
                   Interview
                 </button>
-                <button class="rejectedBtn btn btn-outline btn-error">
+                <button class="rejected-btn btn btn-outline btn-error">
                   Rejected
                 </button>
               </div>
@@ -296,7 +301,7 @@
                 Remote • Full-time • $120,000 - $160,000
               </p>
               <button
-                class="status btn btn-soft w-fit mt-2 text-[#002C5C] text-sm"
+                class="status btn btn-soft w-fit whitespace-nowrap mt-2 text-[#002C5C] text-sm"
               >
                 Not Applied
               </button>
@@ -306,10 +311,10 @@
                 equity package included.
               </p>
               <div class="flex gap-2 mt-2">
-                <button class="interviewBtn btn btn-outline btn-success">
+                <button class="interview-btn btn btn-outline btn-success">
                   Interview
                 </button>
-                <button class="rejectedBtn btn btn-outline btn-error">
+                <button class="rejected-btn btn btn-outline btn-error">
                   Rejected
                 </button>
               </div>
@@ -328,7 +333,7 @@
                 San Francisco, CA • Full-time • $130,000 - $175,000
               </p>
               <button
-                class="status btn btn-soft w-fit mt-2 text-[#002C5C] text-sm"
+                class="status btn btn-soft w-fit whitespace-nowrap mt-2 text-[#002C5C] text-sm"
               >
                 Not Applied
               </button>
@@ -338,10 +343,10 @@
                 work with a talented team on cutting-edge projects.
               </p>
               <div class="flex gap-2 mt-2">
-                <button class="interviewBtn btn btn-outline btn-success">
+                <button class="interview-btn btn btn-outline btn-success">
                   Interview
                 </button>
-                <button class="rejectedBtn btn btn-outline btn-error">
+                <button class="rejected-btn btn btn-outline btn-error">
                   Rejected
                 </button>
               </div>
@@ -353,7 +358,7 @@
         </section>
       </main>
     </div>
-    <script src="./script/machine.js"></script>
+
     <script src="./script/script.js"></script>
   </body>
 </html>

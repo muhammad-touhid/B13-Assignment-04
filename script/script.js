@@ -20,6 +20,7 @@ tabJobCount.innerText = allJobPost.querySelectorAll(
   ".card:not(.empty-state)",
 ).length;
 
+// calcualteCount function for update the dashboar job data
 function calculateCount() {
   allCardCount.innerText = allJobPost.querySelectorAll(
     ".card:not(.empty-state)",
@@ -40,6 +41,7 @@ function calculateCount() {
 
 calculateCount();
 
+// filter function for filtering when click the filter button
 function filter(id) {
   allFilterBtn.classList.remove("btn-active", "btn-info");
   interviewFilterBtn.classList.remove("btn-active", "btn-info");
@@ -66,6 +68,7 @@ function filter(id) {
   calculateCount();
 }
 
+// event for when interview, rejected and delete button clicked in card
 mainContainer.addEventListener("click", function (event) {
   if (event.target.classList.contains("interview-btn")) {
     let cardBody = event.target.parentNode.parentNode.parentNode;
@@ -176,6 +179,7 @@ mainContainer.addEventListener("click", function (event) {
   }
 });
 
+// renderInterViewCard function for adding a new card when interview button clicked in a card
 function renderInterviewCard() {
   filteredSection.innerHTML = "";
 
@@ -226,6 +230,7 @@ function renderInterviewCard() {
   }
 }
 
+// renderRejectedCard function for adding a new card when rejected button clicked in a card
 function renderRejectedCard() {
   filteredSection.innerHTML = "";
 
@@ -275,6 +280,7 @@ function renderRejectedCard() {
   }
 }
 
+// renderAllJobPostEmpty for showing empty-state in all tab when deleted all job
 function renderAllJobPostEmpty() {
   if (allJobPost.children.length === 0) {
     allJobPost.innerHTML = `

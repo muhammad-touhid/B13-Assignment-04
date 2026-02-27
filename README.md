@@ -31,7 +31,7 @@ Event delegation is a system where instead of attaching event listener to multip
 3. Optimised and clean code
 
 ## Answer to question 5:
-#Difference between preventDefault() and stopPropagation() methods
+### Difference between preventDefault() and stopPropagation() methods
 
 1. preventDefault method prevents the default browser behavior of an element and stopPropagation method stop the event from bubbling to the parent element.
 2. preventDefault does not stop the propagating while stopPropagation stops the event from moving up or down the DOM.
